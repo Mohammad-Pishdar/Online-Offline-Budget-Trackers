@@ -19,6 +19,8 @@ app.use(express.static("public"));
 //modified the mongoose.connect URL parameter so it could also be used by heroku
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
   useNewUrlParser: true,
+  useFindAndModify: false,
+  useCreateIndex: true,
   useFindAndModify: false
 });
 
